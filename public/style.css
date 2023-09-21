@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap");
+@font-face {
+  font-family: League Spartan;
+  src: url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "League Spartan";
+}
+.navbar {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  top: 40px;
+  width: 800px;
+  height: 30px;
+  left: 30px;
+  letter-spacing: 1px;
+}
+.logo {
+  cursor: pointer;
+  margin: 5px 40px;
+}
+.links {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 10px;
+  padding: 10px 0;
+}
+.links:hover {
+  margin: 5px 10px 3px;
+  border-bottom: 2px solid white;
+}
+.image {
+  display: flex;
+  overflow: hidden;
+  width: 60%;
+}
+.image img {
+  transition: 0.3s ease;
+  width: 100%;
+  height: auto;
+}
+.image-discription {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.discription {
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  padding: 0 80px;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  width: 40%;
+  aspect-ratio: 1.05;
+}
+.discription h1 {
+  font-size: 40px;
+}
+p {
+  margin: 30px 0;
+  color: hsl(0, 0%, 63%);
+}
+.discription h2 a {
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.discription h2:hover a {
+  transition: 0.2s ease;
+  color: hsl(0, 0%, 63%);
+}
+.discription h2:hover img {
+  cursor: pointer;
+  transition: 0.3s ease;
+  filter: invert(63%);
+}
+.discription .directions {
+  display: flex;
+  position: absolute;
+  width: 148px;
+  left: 0;
+  bottom: 0;
+}
+.discription .btns {
+  cursor: pointer;
+  transition: 0.3s ease;
+  padding: 30px;
+  background-color: black;
+}
+.discription .btns:hover {
+  background-color: hsl(0, 0%, 27%);
+}
+.about {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.about .text {
+  width: 36%;
+  padding: 0 50px;
+}
+.about h3 {
+  margin-top: 50px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.about img {
+  width: 30%;
+}
+
+/* responsive */
+@media screen and (max-width: 1300px) {
+  .discription .directions {
+    display: flex;
+    position: absolute;
+    width: 148px;
+    bottom: auto;
+    left: 0;
+    bottom: 0;
+  }
+  .discription .btns {
+    cursor: pointer;
+    transition: 0.3s ease;
+    padding: 20px;
+    background-color: black;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .discription {
+    padding: 0;
+  }
+  .discription .btns {
+    cursor: pointer;
+    transition: 0.3s ease;
+    padding: 10px;
+    background-color: black;
+  }
+  .about .text {
+    width: 36%;
+    padding: 0 10px;
+  }
+  .about h3 {
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+}
+@media screen and (max-width: 940px) {
+  p {
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .navbar {
+    width: 60px;
+    height: auto;
+    flex-direction: column;
+    top: 20px;
+    left: 20px;
+  }
+  .navbar .logo {
+    filter: invert(100%);
+    margin-bottom: 40px;
+  }
+  .navbar a {
+    color: rgb(70, 70, 70);
+  }
+  .navbar a:hover {
+    border-bottom: 2px solid rgb(54, 54, 54);
+  }
+  .image-discription {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .discription {
+    width: 60%;
+    height: 400px;
+  }
+
+  .discription .directions {
+    display: flex;
+    position: absolute;
+    width: 20px;
+    bottom: auto;
+    top: 0;
+  }
+
+  .about {
+    align-items: center;
+    justify-content: center;
+  }
+  .about p {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .navbar a:hover {
+    border-bottom: 2px solid rgb(46, 46, 46);
+  }
+  .image-discription {
+    align-items: end;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .image-discription .image {
+    width: 80%;
+  }
+  .discription {
+    width: 80%;
+    height: 400px;
+  }
+  .discription h1 {
+    margin: 60px 0 0 0;
+  }
+  .discription h2 a {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 350px) {
+  .navbar {
+    left: 5px;
+  }
+  .discription h1 {
+    margin: 60px 0 0 0;
+  }
+  .about p {
+    font-weight: lighter;
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+  .about h3 {
+    font-size: 10px;
+    letter-spacing: 0.8px;
+  }
+}
