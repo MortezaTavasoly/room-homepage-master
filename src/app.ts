@@ -7,7 +7,6 @@ const closeIcon = document.querySelector(".close") as HTMLImageElement;
 const mobileMenu = document.querySelector(".mobile-menu") as HTMLDivElement;
 const images = document.querySelectorAll(".image img")!;
 
-console.log(mobileMenu);
 
 let counter: number = 0;
 
