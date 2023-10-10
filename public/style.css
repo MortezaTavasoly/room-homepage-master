@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap");
-@font-face {
-  font-family: League Spartan;
-  src: url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@500&display=swap");
-}
 
 * {
   padding: 0;
@@ -13,6 +9,32 @@
 body {
   font-family: "League Spartan";
 }
+.mobile-menu {
+  padding: 0 20px;
+  position: absolute;
+  width: 100%;
+  display: none;
+  z-index: 2;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  background-color: white;
+  box-shadow: rgb(5, 5, 5) 0px 20px 30px -10px;
+}
+.mobile-menu .links .link {
+  font-size: 12px;
+  margin: 5px 5px;
+  padding: 10px 0;
+  text-decoration: none;
+  color: black;
+}
+.mobile-menu .close {
+  cursor: pointer;
+}
+.mobile-menu .links .link:hover {
+  margin: 5px 10px 3px;
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
 .navbar {
   z-index: 1;
   position: absolute;
@@ -20,16 +42,21 @@ body {
   align-items: center;
   justify-content: start;
   top: 40px;
-  width: 800px;
+  width: 100%;
   height: 30px;
   left: 30px;
   letter-spacing: 1px;
+}
+.navbar .menu-icon {
+  display: none;
+  cursor: pointer;
 }
 .logo {
   cursor: pointer;
   margin: 5px 40px;
 }
-.links {
+
+.navbar .links .link {
   text-decoration: none;
   color: white;
   font-size: 18px;
@@ -37,7 +64,7 @@ body {
   margin: 5px 10px;
   padding: 10px 0;
 }
-.links:hover {
+.links .link:hover {
   margin: 5px 10px 3px;
   border-bottom: 2px solid white;
 }
@@ -49,12 +76,11 @@ body {
 .image img {
   transition: 0.3s ease;
   width: 100%;
-  height: auto;
 }
 .image-discription {
   display: flex;
-  justify-content: center;
-  align-items: start;
+  justify-content: space-between;
+  align-items: stretch;
 }
 .discription {
   overflow-y: auto;
@@ -65,7 +91,6 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 40%;
-  aspect-ratio: 1.05;
 }
 .discription h1 {
   font-size: 40px;
@@ -135,6 +160,9 @@ p {
     left: 0;
     bottom: 0;
   }
+  .discription h1 {
+    font-size: 35px;
+  }
   .discription .btns {
     cursor: pointer;
     transition: 0.3s ease;
@@ -144,12 +172,13 @@ p {
 }
 @media screen and (max-width: 1200px) {
   .discription {
-    padding: 0;
+    padding: 30px 60px;
+    justify-content: start;
   }
   .discription .btns {
     cursor: pointer;
     transition: 0.3s ease;
-    padding: 10px;
+    padding: 20px;
     background-color: black;
   }
   .about .text {
@@ -162,39 +191,47 @@ p {
     letter-spacing: 5px;
   }
 }
+@media screen and (max-width: 1030px) {
+  .discription {
+    padding: 30px 5px 20px 75px;
+    justify-content: start;
+  }
+  .discription h1 {
+    font-size: 28px;
+  }
+}
 @media screen and (max-width: 940px) {
   p {
     margin-top: 10px;
   }
+  .discription .btns {
+    padding: 20px;
+  }
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 870px) {
   .navbar {
-    width: 60px;
+    width: 90%;
     height: auto;
-    flex-direction: column;
     top: 20px;
     left: 20px;
-  }
-  .navbar .logo {
-    filter: invert(100%);
-    margin-bottom: 40px;
-  }
-  .navbar a {
-    color: rgb(70, 70, 70);
-  }
-  .navbar a:hover {
-    border-bottom: 2px solid rgb(54, 54, 54);
+    margin: 0;
   }
   .image-discription {
     align-items: center;
     justify-content: center;
     flex-direction: column;
   }
-  .discription {
-    width: 60%;
-    height: 400px;
+  .image {
+    width: 100%;
   }
-
+  .discription {
+    width: 100%;
+    height: auto;
+    padding: 100px 40px 30px;
+  }
+  .discription h1 {
+    margin-bottom: 20px;
+  }
   .discription .directions {
     display: flex;
     position: absolute;
@@ -204,16 +241,31 @@ p {
   }
 
   .about {
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }
+  .about img {
+    width: 80%;
+  }
   .about p {
-    font-size: 10px;
+    margin-top: 20px;
+  }
+  .about .text {
+    width: 80%;
+    font-size: 20px;
   }
 }
 @media screen and (max-width: 540px) {
-  .navbar a:hover {
-    border-bottom: 2px solid rgb(46, 46, 46);
+  .navbar .logo {
+    margin: 0 auto;
+    display: block;
+  }
+  .navbar .menu-icon {
+    display: block;
+  }
+  .navbar .links {
+    display: none;
   }
   .image-discription {
     align-items: end;
@@ -221,17 +273,27 @@ p {
     flex-direction: column;
   }
   .image-discription .image {
-    width: 80%;
+    width: 100%;
   }
   .discription {
-    width: 80%;
-    height: 400px;
+    width: 100%;
+    height: auto;
+    padding: 30px;
   }
+
   .discription h1 {
-    margin: 60px 0 0 0;
+    margin: 60px 0 30px 0;
   }
   .discription h2 a {
     margin: 0;
+  }
+  .about img {
+    width: 100%;
+  }
+  .about .text {
+    width: 100%;
+    padding: 20px;
+    font-size: 15px;
   }
 }
 @media screen and (max-width: 350px) {
