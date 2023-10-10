@@ -2,7 +2,12 @@ const left = document.querySelector(".left") as HTMLImageElement;
 const right = document.querySelector(".right") as HTMLImageElement;
 const h1 = document.querySelector(".discription h1") as HTMLHeadingElement;
 const p = document.querySelector(".discription p") as HTMLParagraphElement;
+const menuIcon = document.querySelector(".menu-icon") as HTMLImageElement;
+const closeIcon = document.querySelector(".close") as HTMLImageElement;
+const mobileMenu = document.querySelector(".mobile-menu") as HTMLDivElement;
 const images = document.querySelectorAll(".image img")!;
+
+console.log(mobileMenu);
 
 let counter: number = 0;
 
@@ -41,3 +46,10 @@ const text = (): void => {
     p.textContent = `We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.`;
   }
 };
+
+menuIcon.addEventListener("click", () => {
+  mobileMenu.style.display = "flex";
+});
+closeIcon.addEventListener("click", () => {
+  mobileMenu.style.display = "none";
+});
